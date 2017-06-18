@@ -1,0 +1,9 @@
+---
+- name: Ensure alsa packages are installed
+  action: "pacman name={{item}} state=installed"
+  with_items:
+       - alsa-utils
+       - alsa-firmware
+       - alsa-lib
+       - alsa-plugins
+  when: alsa_enabled
